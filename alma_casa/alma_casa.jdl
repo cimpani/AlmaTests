@@ -1,0 +1,22 @@
+jobName = "CASA_scripts_alma_%s";
+
+Executable = "alma_casa.sh";
+
+StdOutput = "StdOut";
+StdError = "StdErr";
+
+Tags = {"8Processors","skatelescope.eu.hmem"};
+
+SitesList = "LCG.UKI-NORTHGRID-MAN-HEP.uk";
+SEList = "UKI-NORTHGRID-MAN-HEP-disk";
+
+InputSandbox = {"alma_casa.sh","imgfiles.tar"};
+InputData = {"LFN:/skatelescope.eu/user/c/cimpan/rascil/casa-5.4.1.simg","LFN:/skatelescope.eu/user/c/cimpan/rascil/%s_CalibratedData.tgz"};
+
+Parameters = {"HLTau_Band6","HLTau_Band7","Mira_Band6"};
+Arguments = "%j %n %s";
+
+OutputSandbox = {"StdOut","StdErr","job.info", "*.log"};
+OutputData = {"%s_outputFITS.tar"};
+
+OutputSE = "UKI-NORTHGRID-MAN-HEP-disk";

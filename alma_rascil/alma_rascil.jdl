@@ -1,0 +1,22 @@
+JobName = "alma_rascil_%s";
+
+InputSandbox = {"alma_rascil.sh", "alma_rascil.py", "configfiles.tar.gz"};
+InputData = {"LFN:/skatelescope.eu/user/a/anna.scaife/alma/rascil-latest.img","LFN:/skatelescope.eu/user/c/cimpan/rascil/%s_CalibratedData.tgz"};
+
+Tags = {"skatelescope.eu.hmem", "4Processors"};
+
+Executable = "alma_rascil.sh";
+Site = "LCG.UKI-NORTHGRID-MAN-HEP.uk";
+Arguments = "%j %n %s";
+Platform = "EL7";
+
+Parameters = {"HLTau_Band6","HLTau_Band7","Mira_Band6"};
+
+OutputSE = "UKI-NORTHGRID-MAN-HEP-disk";
+OutputData = {"%s_outputFITS.tar", "%s_outputPNGS.tar"};
+
+
+OutputSandbox = {"StdOut", "StdErr", "job.info", "*.log"};
+StdOutput = "StdOut";
+StdError = "StdErr";
+
